@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
+import { UseSelector, useSelector } from 'react-redux';
 import { images } from '../constants'
 {/*import {AiOutlineMenu, AiOutlineClose} from "react-icons"*/}
+
+
 const NavItemInfo = [
     {name:"Home", type:"link" },
     {name:"Articles", type: "link"},
@@ -10,6 +13,8 @@ const NavItemInfo = [
 ]
 const NavItem = ({item}) => {
   const [dropdown, setDropdown] = useState(false);
+  const userSate = useSelector();
+
   const toggleDropdownHandler = () => {
    setDropdown((curState) => {
     return !curState;
